@@ -12,7 +12,7 @@ type ICapture interface {
 type Capture struct{}
 
 func (r *Capture) Capture(ctx context.Context, url string) ([]byte, error) {
-	ctx, cancel := chromedp.NewContext(context.Background())
+	ctx, cancel := chromedp.NewContext(ctx)
 	defer cancel()
 
 	var screenshot []byte
